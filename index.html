@@ -10,8 +10,27 @@
     <title>App web maps</title>
 </head>
 <body>
+
+<div class="container-fluid">
+       
+    <button type="button" class="btn btn-light m-3" data-bs-toggle="modal" data-bs-target="#modalId">
+        Agregar punto de interés
+    </button>
     
     <div id="map"></div>
+
+</div>
+
+<!--modal-->
+<div class="modal fade" id="modalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+        </div>
+     
+      </div>
+    </div>
+</div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
