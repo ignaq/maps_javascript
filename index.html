@@ -57,11 +57,12 @@
 
 
                 <div class="md-form mb-3">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Categoría</option>
+                    <label for="categoria">Seleccionar categoría</label>
+                    <select class="form-select" aria-label="Default select example" id="categoria">
+                        <option value="Mixta">Mixta</option>
                         <option value="Comercial">Comercial</option>
                         <option value="Residencial">Residencial</option>
-                        <option value="Mixta">Mixta</option>
+                        
                     </select>
                   </div>  
 
@@ -75,7 +76,7 @@
 
               <div class="modal-footer d-flex justify-content-center">
                 <button type="button" id="btnCancel" class="btn btn-default" data-bs-dismiss="modal">Cerrar</button>
-                <button class="btn btn-default">Guardar</button>
+                <button type="button" class="btn btn-default" onclick="getValuesFromForm();">Guardar</button>
               </div>
           
 

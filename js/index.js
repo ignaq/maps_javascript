@@ -21,3 +21,15 @@ window.onload = function cargaMap() {
 
 }
 
+function getValuesFromForm(){
+    let inputNombre = document.getElementById('inputNombre').value;
+    let inputDireccion = document.getElementById('inputDireccion').value;
+    let inputTelefono = document.getElementById('inputTelefono').value;
+    let coords = document.getElementById('coords').value;
+    let categoria = document.getElementById('categoria').value;
+
+
+
+}
+
+
