@@ -1,3 +1,5 @@
+const myModal = new bootstrap.Modal(document.getElementById('modalId'))
+const form = document.getElementById('form');
 
 window.onload = function cargaMap() {
     let myPosition = new google.maps.LatLng(-34.602209, -58.376626);
@@ -12,13 +14,11 @@ window.onload = function cargaMap() {
 
     map.addListener('click', function(event){
   
-    document.getElementById("coords").value = event.latLng.lat() + ", " + event.latLng.lng();
-    
-         const myModal = new bootstrap.Modal(document.getElementById('modalId'))
+    document.getElementById("coords").value = event.latLng.lat() + ", " + event.latLng.lng();        
         
-        myModal.show()
-
-    })
+    myModal.show()
+    
+})
 
 
 }
@@ -26,14 +26,24 @@ window.onload = function cargaMap() {
 let arrayMarkers = [];
 let idMarker = 1;
 
-function getValuesFromForm(){
-    let inputNombre = document.getElementById('inputNombre').value;
-    let inputDireccion = document.getElementById('inputDireccion').value;
-    let inputTelefono = document.getElementById('inputTelefono').value;
-    let coords = document.getElementById('coords').value;
-    let categoria = document.getElementById('categoria').value;
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    getValuesFromForm();
+})
 
-    addMarker(inputNombre,inputDireccion,inputTelefono,coords,categoria);
+
+function getValuesFromForm(){
+    let nombre = document.getElementById('inputNombre').value;
+    let direccion = document.getElementById('inputDireccion').value;
+    let tel = document.getElementById('inputTelefono').value;
+    let coords = document.getElementById('coords').value;
+    let categ = document.getElementById('categoria').value;
+
+    if(nombre != '' && direccion != ''){
+        myModal.hide();
+    addMarker(nombre,direccion,tel,coords,categ);
+    }
 
 }
 
@@ -55,7 +65,7 @@ function addMarker(nombre,direccion,telefono,coords,cat){
     idMarker++;
     
     let infoWindow = new google.maps.InfoWindow({
-        content: `<h2>Nombre: ${nombre}</h2>
+        content: `<p>Nombre: ${nombre}</p>
                  <p>Dirección: ${direccion}</p>
                  <p>Teléfono: ${telefono}</p>
                 <p>Categoría: ${cat}</p>
