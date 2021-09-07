@@ -10,8 +10,80 @@
     <title>App web maps</title>
 </head>
 <body>
+
+<div class="container-fluid">
+       
+    <button type="button" class="btn btn-light m-3" data-bs-toggle="modal" data-bs-target="#modalId">
+        Agregar punto de interés
+    </button>
     
     <div id="map"></div>
+
+</div>
+
+<!--modal-->
+<div class="modal fade" id="modalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn-close btn-cancel" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      
+        <form class="row g-3" id="form">
+       
+            <div class="modal-body mx-3">
+                <div class="md-form mb-3">
+                    <label for="inputNombre">Nombre</label>
+                    <input type="text" class="form-control" id="inputNombre" placeholder="ej: AEROTERRA S.A." required>
+                </div>
+        
+                <div class="md-form mb-3">
+                    <label for="inputDireccion">Dirección</label>
+                    <input type="text" class="form-control" id="inputDireccion" placeholder="ej: Av. Eduardo Madero 1020, C1001 CABA" required>
+                </div>
+
+                <div class="md-form mb-3">
+                    <label for="inputTelefono">Teléfono</label>
+                    <input type="text" class="form-control" id="inputTelefono" placeholder="ej: 54 9 11 5272 0900">
+                </div>
+
+
+
+                <div class="md-form mb-3">
+                  <label for="coords">Seleccionar coordenada en el mapa</label>
+                  <input type="text" class="form-control" id="coords" placeholder="ej: -34.595986,-58.3724715" disabled required>
+                </div>
+
+
+
+                <div class="md-form mb-3">
+                    <label for="categoria">Seleccionar categoría</label>
+                    <select class="form-select" aria-label="Default select example" id="categoria" >
+                        <option value="Mixta">Mixta</option>
+                        <option value="Comercial">Comercial</option>
+                        <option value="Residencial">Residencial</option>
+                    </select>
+                  </div>  
+
+
+
+            
+            </div>
+
+
+
+
+              <div class="modal-footer d-flex justify-content-center">
+                <button type="button" id="btnCancel" class="btn btn-default" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-default" id="btnSubmit" >Guardar</button>
+              </div>
+          
+
+          </form>
+  
+      </div>
+    </div>
+</div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
