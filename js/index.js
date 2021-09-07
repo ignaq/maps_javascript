@@ -51,13 +51,15 @@ function addMarker(nombre,direccion,telefono,coords,cat){
         map: map,
     });
 
-    
+    marker.id = idMarker;
+    idMarker++;
     
     let infoWindow = new google.maps.InfoWindow({
         content: `<h2>Nombre: ${nombre}</h2>
                  <p>Dirección: ${direccion}</p>
                  <p>Teléfono: ${telefono}</p>
-                <p>Categoría: ${cat}</p>`
+                <p>Categoría: ${cat}</p>
+    <button type='button' onclick='deleteMarker(${marker.id});' />Eliminar</button> `
   });
 
   
@@ -68,4 +70,16 @@ function addMarker(nombre,direccion,telefono,coords,cat){
   })
     
   arrayMarkers.push(marker);
+}
+
+
+function deleteMarker(id){
+    for (let i = 0; i < arrayMarkers.length; i++) {
+           if(arrayMarkers[i].id == id){
+            arrayMarkers[i].setMap(null); 
+            arrayMarkers.splice(i,1);
+             return;
+           }
+      }
+
 }
