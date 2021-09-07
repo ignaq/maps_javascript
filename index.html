@@ -26,7 +26,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-cancel" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
       
         <form class="row g-3">
@@ -34,7 +34,7 @@
             <div class="modal-body mx-3">
                 <div class="md-form mb-3">
                     <label for="inputNombre">Nombre</label>
-                    <input type="text" class="form-control" id="inputNombre" placeholder="ej: AEROTERRA S.A.">
+                    <input type="text" class="form-control" id="inputNombre" placeholder="ej: AEROTERRA S.A." required>
                 </div>
         
                 <div class="md-form mb-3">
@@ -47,7 +47,16 @@
                     <input type="text" class="form-control" id="inputTelefono" placeholder="ej: 54 9 11 5272 0900">
                 </div>
 
-                  <div class="md-form mb-3">
+
+
+                <div class="md-form mb-3">
+                  <label for="coords">Seleccionar coordenada en el mapa</label>
+                  <input type="text" class="form-control" id="coords" placeholder="ej: -34.595986,-58.3724715" disabled>
+                </div>
+
+
+
+                <div class="md-form mb-3">
                     <select class="form-select" aria-label="Default select example">
                         <option selected>Categoría</option>
                         <option value="Comercial">Comercial</option>
@@ -58,16 +67,14 @@
 
 
 
-                <div class="md-form mb-3">
-                  <label for="coords">Coordenadas</label>
-                  <input type="text" class="form-control" id="coords" placeholder="ej: -34.595986,-58.3724715">
-                </div>
             
             </div>
 
 
+
+
               <div class="modal-footer d-flex justify-content-center">
-                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" id="btnCancel" class="btn btn-default" data-bs-dismiss="modal">Cerrar</button>
                 <button class="btn btn-default">Guardar</button>
               </div>
           
